@@ -1,28 +1,33 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import Devotions from "./pages/Devotions";
+import Bible from "./pages/Bible";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import './App.css'
+import "./App.css";
 
 
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
+  // Load saved preference
   useEffect(() => {
-    const savedTheme = localStorage.getItem("darkMode");
-    if (savedTheme === "true") setDarkMode(true);
+    const saved = localStorage.getItem("dark-mode") === "true";
+    setDarkMode(saved);
   }, []);
 
+  // Apply theme class
   useEffect(() => {
-    localStorage.setItem("darkMode", darkMode);
+    document.body.classList.remove("dark-mode", "light-mode");
+    document.body.classList.add(darkMode ? "dark-mode" : "light-mode");
+    localStorage.setItem("dark-mode", darkMode);
   }, [darkMode]);
-  
-  
-  
-  
-  
+
+
+
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (e) => {
@@ -33,48 +38,56 @@ function App() {
 
   return (
     <Router>
-      <div className={`App ${darkMode ? "dark" : "light"}`}>
-        <header>
-          <h1>Still Waters</h1>
-          <h3>Devotion</h3>
-          <nav className="nav-bar">
-            <Link to="/">Home</Link> | {""}
-            <Link to="/about">About</Link> | {""}
-            <Link to="/contact">Contact</Link>
-
-            {/* toggle Button */}
-            <button 
-            className="toggle-btn"
-            onClick={() => setDarkMode(!darkMode)}
-            >
-
-            {darkMode ? "Light Mode" : "Dark Mode"}
-            </button>
-
-
-             {/* Search Bar */}
-        <form className="seach-form" onSubmit={handleSearch}>
-          <input type="text" placeholder="search devotion..." value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)} />
-          <button type="submit">Search</button>
-        </form>
-      </nav>
-      </header>
-
+      {/* Dark / Light Toggle Button */}
+      <button
+        className="dark-toggle"
+        onClick={() => setDarkMode(!darkMode)}
+        style={{
+          position: "fixed",
+          top: "15px",
+          right: "15px",
+          padding: "10px 16px",
+          borderRadius: "8px",
+          border: "none",
+          cursor: "pointer",
+          zIndex: 999,
+        }}
+      >
+        {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+      </button>
+      <div className="dark-mode">
         <main>
+          <header>
+            <h1>Peaceful Streams</h1>
+
+
+
+            {/* Search Bar */}
+            <form className="seach-form" onSubmit={handleSearch}>
+              <input type="text" placeholder="search devotion..." value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)} />
+              <button type="submit">Search</button>
+            </form>
+          </header>
+
+
+          <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/devotions" element={<Devotions />} />
+            <Route path="/bible" element={<Bible />} />
           </Routes>
+
         </main>
 
         <footer>
-          <p>@ {new Date().getFullYear()} Still Waters Devotion </p>
+          <p>@ {new Date().getFullYear()} Peaceful Streams </p>
         </footer>
 
-      </div>
-    </Router>
+      </div >
+    </Router >
   );
 }
 
