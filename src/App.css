@@ -85,7 +85,7 @@ button:hover {
 /* ===== DARK MODE ===== */
 .dark-mode {
   --bg: #1e1a19;         /* Dark coffee background */
-  --card-bg: #2a2422;    /* Dark espresso cards */
+  --card-bg: #f3e9dd;    /* Dark espresso cards */
   --text: #f3e9dd;       /* Soft creamy text */
   --accent: #c7a27c;     /* Light caramel for headings/links */
   --nav-bg: #3b2f2f;     /* Navbar dark brown */
@@ -320,6 +320,129 @@ img {
     font-size: 0.9rem;
     padding: 15px 0;
   }
+}
+
+/* ===== BIBLE PAGE ===== */
+
+:root {
+  --coffee: #6B4F35;
+  --beige: #F5EDE3;
+}
+
+
+
+/* The Card */
+.bible-reader-card {
+  background: #4B3621;
+  border: 2px solid var(--coffee);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Chapter Title */
+.chapter-title {
+  text-align: center;
+  color: var(--coffee);
+  margin-bottom: 15px;
+}
+
+/* Verse Style */
+.verse {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.verse-number {
+  font-weight: bold;
+  color: var(--coffee);
+  margin-right: 8px;
+}
+
+/* ===== BIBLE BOOK FORM ===== */
+
+.bible-form {
+  background: var(--beige);
+  border: 2px solid var(--coffee);
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.bible-form label {
+  color: var(--coffee);
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+.bible-form select,
+.bible-form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid var(--coffee);
+  border-radius: 5px;
+}
+
+.bible-form button {
+  background: var(--coffee);
+  color: var(--beige);
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* ===== Devotions page layout ===== */
+
+/* Card Layout */
+.devotion-card {
+  background-color: #EBD9C6; /* beige card */
+  padding: 1.5rem;
+  border-radius: 1rem; /* rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12); /* soft shadow */
+  border-left: 6px solid #6F4E37; /* coffee accent bar */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect (optional, but looks great) */
+.devotion-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.18);
+}
+
+/* Title inside card */
+.devotion-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #6F4E37;
+  margin-bottom: 0.25rem;
+}
+
+/* Verse inside card */
+.devotion-verse {
+  font-weight: 600;
+  color: #3B2F2F;
+  margin-bottom: 0.5rem;
+}
+
+/* Content */
+.devotion-content {
+  color: #3B2F2F;
+  line-height: 1.5;
+}
+
+.submit {
+  padding: 4px 10px;        /* smaller inner space */
+  font-size: 0.8rem;        /* smaller text */
+  border-radius: 6px;
+  background-color: #6F4E37; /* coffee color */
+  color: white;
+  cursor: pointer;
 }
 
 

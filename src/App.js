@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Devotions from "./pages/Devotions";
+
 import Bible from "./pages/Bible";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -66,7 +67,7 @@ function App() {
             <form className="seach-form" onSubmit={handleSearch}>
               <input type="text" placeholder="search devotion..." value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)} />
-              <button type="submit">Search</button>
+              <button className="submit">Search</button>
             </form>
           </header>
 
