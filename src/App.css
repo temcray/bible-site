@@ -77,14 +77,14 @@ button:hover {
   --bg: #f5e6d3;         /* Beige background */
   --card-bg: #ffffff;    /* White cards */
   --text: #4a342e;       /* Coffee brown text */
-  --accent: #7b5e57;     /* Darker brown for headings/links */
-  --nav-bg: #7b5e57;     /* Navbar brown */
+  --accent: #c7a27c;     /* Darker brown for headings/links */
+  --nav-bg: #4a342e;     /* Navbar brown */
   --link: #ffffff;       /* Navbar links */
 }
 
 /* ===== DARK MODE ===== */
 .dark-mode {
-  --bg: #1e1a19;         /* Dark coffee background */
+  --bg: #140728;         /* Dark coffee background */
   --card-bg: #f3e9dd;    /* Dark espresso cards */
   --text: #f3e9dd;       /* Soft creamy text */
   --accent: #c7a27c;     /* Light caramel for headings/links */

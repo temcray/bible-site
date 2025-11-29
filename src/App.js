@@ -47,7 +47,7 @@ function App() {
           position: "fixed",
           top: "15px",
           right: "15px",
-          padding: "10px 16px",
+          padding: "3px 5px",
           borderRadius: "8px",
           border: "none",
           cursor: "pointer",
@@ -56,7 +56,7 @@ function App() {
       >
         {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
       </button>
-      <div className="dark-mode">
+      <div className="px-2 py-0.5 text-xs rounded-md">
         <main>
           <header>
             <h1>Peaceful Streams</h1>
