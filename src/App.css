@@ -297,7 +297,7 @@ button:hover {
   }
 }
 
-img {
+.about img {
   max-width: 100%;
   height: auto;
   border-radius: 12px;
@@ -445,5 +445,18 @@ img {
   cursor: pointer;
 }
 
+/* ===== FOOTER =====*/
+.Footer {
+  background-color: #4B3621;
+  color: #F5E6D3;
+}
+
+.img-container {  
+  height: auto;
+}
 
 
+.bible-cross {
+  width: 80%;
+  
+}

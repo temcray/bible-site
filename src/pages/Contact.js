@@ -1,9 +1,10 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
 
 
 function Contact() {
   const form = useRef();
+  const [sent, setSent] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -17,6 +18,7 @@ function Contact() {
       )
       .then(
         () => {
+          setSent(true);
           alert("Message sent successfully!");
           form.current.reset();
         },
@@ -31,17 +33,28 @@ function Contact() {
     <div className="contact-page">
       <section className="card">
 
-        <h1>Contact Me</h1>
+        <h1>Contact Us</h1>
 
         <form ref={form} onSubmit={sendEmail} className="contact-form">
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="reply_to" placeholder="Your Email" required />
           <textarea name="message" placeholder="Your Message" required />
-          <button type="submit">Send Message</button>
-        </form>
-      </section>
 
+
+          <label>Prayer Request Field:</label>
+          <textarea
+            name="prayer_request"
+            rows="4"
+            placeholder="Write your prayer request here"
+            className="input" />
+          <button type="submit" className="submit-bin">Send Message</button>
+        </form>
+
+        {sent && <p className="success">Your message has been sent!</p>}
+
+      </section>
     </div>
+
   );
 }
 

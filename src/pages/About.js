@@ -2,7 +2,7 @@ import React from "react";
 
 function About() {
   return (
-    <section className="card">
+    <section className="card about">
       <h1>About Peaceful Streams</h1>
 
       <p>

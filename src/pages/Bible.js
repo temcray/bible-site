@@ -61,7 +61,11 @@ function Bible() {
 
           <button type="button" onClick={handleFetch}>Load Scripture</button>
         </form>
+        <div className="img-container">
+          <img className="bible-cross" src="/bible-cross.jpg" alt="cross" />
+        </div>
       </div>
+
 
       {/* Results */}
       {result && (

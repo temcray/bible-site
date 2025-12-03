@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Devotions from "./pages/Devotions";
-
+import Footer from "./components/Footer"
 import Bible from "./pages/Bible";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -71,7 +71,7 @@ function App() {
             </form>
           </header>
 
-
+          {/* Navbar */}
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -83,9 +83,9 @@ function App() {
 
         </main>
 
-        <footer>
+        <Footer>
           <p>@ {new Date().getFullYear()} Peaceful Streams </p>
-        </footer>
+        </Footer>
 
       </div >
     </Router >
