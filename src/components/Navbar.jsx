@@ -21,6 +21,9 @@ function Navbar() {
         <Link to="/bible" className="hover:opacity-75">
           Bible
         </Link>
+        <Link to="/encouragement" className="hover:opacity-75">
+          Encouragement
+        </Link>
       </div>
     </nav>
   );

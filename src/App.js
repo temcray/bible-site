@@ -7,6 +7,7 @@ import Footer from "./components/Footer"
 import Bible from "./pages/Bible";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Encouragement from "./pages/Encouragement";
 import "./App.css";
 
 
@@ -79,6 +80,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/devotions" element={<Devotions />} />
             <Route path="/bible" element={<Bible />} />
+            <Route path="/encouragement" element={<Encouragement />} />
           </Routes>
 
         </main>
