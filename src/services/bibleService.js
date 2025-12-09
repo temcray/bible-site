@@ -15,7 +15,7 @@ class BibleService {
   getChapterByBook(bookName) {
     for (let i = 0; i < BIBLE.length; i++) {
       let book = BIBLE[i];
-      if (book.bname == bookName) {
+      if (book.bname === bookName) {
         // get the name of each of its chapters
         return book.CHAPTER.map(chapter => chapter.cnumber);
         // book.CHAPTER
@@ -27,7 +27,7 @@ class BibleService {
     const book = BIBLE.find(b => b.bname === bookName);
     if (!book) return [];
 
-    const chapter = book.CHAPTER.find(ch => ch.cnumber === String(chapterNumber));
+    const chapter = book.CHAPTER.find(ch => String(ch.cnumber) === String(chapterNumber));
     if (!chapter) return [];
 
     return chapter.VERS;

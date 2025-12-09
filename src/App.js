@@ -4,10 +4,14 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Devotions from "./pages/Devotions";
 import Footer from "./components/Footer"
+import Signup from './pages/Signup';
+import Login from './pages/Login';
 import Bible from "./pages/Bible";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Encouragement from "./pages/Encouragement";
+
+import ProtectedRoute from "./components/ProtectedRoute";
 import "./App.css";
 
 
@@ -39,6 +43,8 @@ function App() {
 
 
   return (
+
+
     <Router>
       {/* Dark / Light Toggle Button */}
       <button
@@ -75,12 +81,21 @@ function App() {
           {/* Navbar */}
           <Navbar />
           <Routes>
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/devotions" element={<Devotions />} />
             <Route path="/bible" element={<Bible />} />
             <Route path="/encouragement" element={<Encouragement />} />
+            <Route path="/Home" element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+            />
           </Routes>
 
         </main>
@@ -91,6 +106,7 @@ function App() {
 
       </div >
     </Router >
+
   );
 }
 

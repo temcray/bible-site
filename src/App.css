@@ -55,7 +55,7 @@ h1, h2, h3 {
 button {
   background-color: var(--coffee);
   color: var(--light-beige);
-  padding: 10px 20px;
+  padding: 5px 10px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
